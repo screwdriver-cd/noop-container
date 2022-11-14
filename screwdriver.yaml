@@ -1,0 +1,8 @@
+shared:
+    environment:
+        DOCKER_REPO: screwdrivercd/noop-container
+        DOCKER_MULTI_PLATFORM_BUILDS_ENABLED: 1
+jobs:
+    docker-publish:
+        requires: [~pr, ~commit]
+        template: sd/dind@latest
