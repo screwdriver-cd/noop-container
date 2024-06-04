@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.19
 MAINTAINER Screwdriver <screwdriver.cd>
 
 LABEL description="Minimal image to use in no-op operations in screwdriver"
