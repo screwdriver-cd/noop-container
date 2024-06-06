@@ -1,10 +1,10 @@
 ARG BASE_ALPINE_VERSION=latest
-ARG TARGETARCH
 
 FROM alpine:${BASE_ALPINE_VERSION}
 MAINTAINER Screwdriver <screwdriver.cd>
-
 LABEL description="Minimal image to use in no-op operations in screwdriver"
+
+ARG TARGETARCH
 
 # Based on https://github.com/screwdriver-cd/launcher/blob/master/Dockerfile
 RUN set -x \
