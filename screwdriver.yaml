@@ -8,3 +8,14 @@ jobs:
             screwdriver.cd/buildPeriodically: H 0 1 * *
         requires: [~pr, ~commit]
         template: sd/dind@latest
+
+    docker-publish-3_19:
+        annotations:
+            screwdriver.cd/buildPeriodically: H 0 1 * *
+        requires: [~pr, ~commit]
+        template: sd/dind@latest
+        steps:
+            - prebuild-push: echo "3.19" > VERSION
+        environment:
+            SKIP_LATEST: 1
+            DOCKER_BUILD_EXTRA_FLAGS: "--build-arg BASE_ALPINE_VERSION=3.19"
