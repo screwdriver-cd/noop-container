@@ -8,6 +8,8 @@ jobs:
             screwdriver.cd/buildPeriodically: H 0 1 * *
         requires: [~pr, ~commit]
         template: sd/dind@latest
+        steps:
+            - prebuild-push: echo > VERSION
 
     docker-publish-3_19:
         annotations:
